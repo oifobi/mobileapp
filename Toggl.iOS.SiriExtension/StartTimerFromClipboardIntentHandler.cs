@@ -78,6 +78,7 @@ namespace SiriExtension
                 intent.Tags == null ? new long[0] : stringToLongCollection(intent.Tags.Select(tag => tag.Identifier)),
                 (long)SharedStorage.Instance.GetUserId(),
                 0,
+                Guid.Empty.ToString(),
                 null,
                 DateTimeOffset.Now
             );

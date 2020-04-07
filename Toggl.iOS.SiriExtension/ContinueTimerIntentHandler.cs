@@ -89,6 +89,7 @@ namespace SiriExtension
                 originalTE.TagIds ?? new long[0],
                 originalTE.UserId,
                 0,
+                Guid.Empty.ToString(),
                 null,
                 DateTimeOffset.Now
             );

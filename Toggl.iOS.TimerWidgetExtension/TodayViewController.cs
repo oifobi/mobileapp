@@ -136,6 +136,7 @@ namespace Toggl.iOS.TimerWidgetExtension
                 tagIds: new long[0],
                 userId: (long)SharedStorage.Instance.GetUserId(),
                 id: 0,
+                uniqueId: Guid.Empty.ToString(),
                 serverDeletedAt: null,
                 at: DateTimeOffset.Now);
             await createTimeEntry(timeEntry);
@@ -154,6 +155,7 @@ namespace Toggl.iOS.TimerWidgetExtension
                 suggestion.TagIds ?? new long[0],
                 (long)SharedStorage.Instance.GetUserId(),
                 id: 0,
+                uniqueId: Guid.Empty.ToString(),
                 serverDeletedAt: null,
                 at: DateTimeOffset.Now);
 

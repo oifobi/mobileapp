@@ -115,6 +115,8 @@ namespace Toggl.iOS.Shared
             var serverDeletedAt = dict.GetDateTimeOffsetForKey(timeEntryServerDeletedAt);
             var at = dict.GetDateTimeOffsetForKey(timeEntryAt).Value;
 
+            var fakeUniqueId = Guid.Empty.ToString();
+
             return new TimeEntry(
                 workspaceId,
                 projectId,
@@ -126,6 +128,7 @@ namespace Toggl.iOS.Shared
                 null,
                 userId,
                 id,
+                fakeUniqueId,
                 serverDeletedAt,
                 at);
         }

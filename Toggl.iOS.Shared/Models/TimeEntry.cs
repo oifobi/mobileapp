@@ -16,11 +16,12 @@ namespace Toggl.iOS.Shared.Models
         public IEnumerable<long> TagIds { get; }
         public long UserId { get; }
         public long Id { get; }
+        public string UniqueId { get; }
         public DateTimeOffset? ServerDeletedAt { get; }
         public DateTimeOffset At { get; }
 
         public TimeEntry(long workspaceId, long? projectId, long? taskId, bool billable, DateTimeOffset start, long? duration,
-                         string description, IEnumerable<long> tagIds, long userId, long id, DateTimeOffset? serverDeletedAt, DateTimeOffset at)
+                         string description, IEnumerable<long> tagIds, long userId, long id, string uniqueId, DateTimeOffset? serverDeletedAt, DateTimeOffset at)
         {
             WorkspaceId = workspaceId;
             ProjectId = projectId;
@@ -32,6 +33,7 @@ namespace Toggl.iOS.Shared.Models
             TagIds = tagIds;
             UserId = userId;
             Id = id;
+            UniqueId = uniqueId;
             ServerDeletedAt = serverDeletedAt;
             At = at;
         }
@@ -49,6 +51,7 @@ namespace Toggl.iOS.Shared.Models
                 entry.TagIds ?? new List<long>(),
                 entry.UserId,
                 entry.Id,
+                entry.UniqueId,
                 entry.ServerDeletedAt,
                 entry.At
             );
@@ -67,6 +70,7 @@ namespace Toggl.iOS.Shared.Models
                 this.TagIds,
                 this.UserId,
                 this.Id,
+                this.UniqueId,
                 this.ServerDeletedAt,
                 this.At
             );
