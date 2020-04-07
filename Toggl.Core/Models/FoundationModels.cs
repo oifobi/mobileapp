@@ -196,7 +196,7 @@ namespace Toggl.Core.Models
     {
         public long Id { get; }
 
-        public string UniqueId { get; }
+        public string UniqueId => fakeUniqueId;
 
         public string ApiToken { get; }
 

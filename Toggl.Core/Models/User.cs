@@ -7,6 +7,8 @@ namespace Toggl.Core.Models
 {
     internal partial class User
     {
+        private static string fakeUniqueId = Guid.Empty.ToString();
+
         public User(IDatabaseUser user, long workspaceId)
             : this(user, SyncStatus.SyncNeeded, null)
         {
@@ -19,7 +21,7 @@ namespace Toggl.Core.Models
                 => new Builder(user);
 
             public long Id { get; private set; }
-            public string UniqueId { get; }
+            public string UniqueId => fakeUniqueId;
             public string ApiToken { get; private set; }
             public long? DefaultWorkspaceId { get; private set; }
             public Email Email { get; private set; }
@@ -36,7 +38,6 @@ namespace Toggl.Core.Models
             public Builder(IDatabaseUser user)
             {
                 Id = user.Id;
-                UniqueId = user.UniqueId;
                 ApiToken = user.ApiToken;
                 DefaultWorkspaceId = user.DefaultWorkspaceId;
                 Email = user.Email;
@@ -100,7 +101,6 @@ namespace Toggl.Core.Models
         private User(Builder builder)
         {
             Id = builder.Id;
-            UniqueId = builder.UniqueId;
             ApiToken = builder.ApiToken;
             DefaultWorkspaceId = builder.DefaultWorkspaceId;
             Email = builder.Email;

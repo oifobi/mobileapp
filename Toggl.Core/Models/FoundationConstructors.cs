@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Toggl.Shared.Models;
 using Toggl.Storage;
 using Toggl.Storage.Models;
@@ -235,7 +236,6 @@ namespace Toggl.Core.Models
         private User(IUser entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
-            UniqueId = entity.UniqueId;
             ApiToken = entity.ApiToken;
             DefaultWorkspaceId = entity.DefaultWorkspaceId;
             Email = entity.Email;
