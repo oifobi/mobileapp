@@ -12,6 +12,8 @@ namespace Toggl.Core.Models
     {
         public long Id { get; }
 
+        public string UniqueId { get; }
+
         public long WorkspaceId { get; }
 
         public long? ClientId { get; }
@@ -67,6 +69,8 @@ namespace Toggl.Core.Models
     {
         public long Id { get; }
 
+        public string UniqueId { get; }
+
         public long WorkspaceId { get; }
 
         public string Name { get; }
@@ -91,6 +95,8 @@ namespace Toggl.Core.Models
     internal partial class Task : IThreadSafeTask
     {
         public long Id { get; }
+
+        public string UniqueId { get; }
 
         public string Name { get; }
 
@@ -132,6 +138,8 @@ namespace Toggl.Core.Models
     internal partial class TimeEntry : IThreadSafeTimeEntry
     {
         public long Id { get; }
+
+        public string UniqueId { get; }
 
         public long WorkspaceId { get; }
 
@@ -188,6 +196,8 @@ namespace Toggl.Core.Models
     {
         public long Id { get; }
 
+        public string UniqueId { get; }
+
         public string ApiToken { get; }
 
         public long? DefaultWorkspaceId { get; }
@@ -216,6 +226,8 @@ namespace Toggl.Core.Models
     internal partial class Workspace : IThreadSafeWorkspace
     {
         public long Id { get; }
+
+        public string UniqueId { get; }
 
         public string Name { get; }
 
@@ -265,6 +277,8 @@ namespace Toggl.Core.Models
     internal partial class WorkspaceFeatureCollection : IThreadSafeWorkspaceFeatureCollection
     {
         public long WorkspaceId { get; }
+
+        public string UniqueId { get; }
 
         public IEnumerable<IWorkspaceFeature> Features { get; }
 

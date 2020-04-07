@@ -3,5 +3,6 @@
     public interface IIdProvider
     {
         long GetNextIdentifier();
+        string GetNewUniqueId();
     }
 }

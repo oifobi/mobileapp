@@ -8,6 +8,8 @@ namespace Toggl.Networking.Models
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         [JsonProperty("wid")]
         public long WorkspaceId { get; set; }
 

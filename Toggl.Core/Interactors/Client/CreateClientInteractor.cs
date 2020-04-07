@@ -39,6 +39,7 @@ namespace Toggl.Core.Interactors
         public IObservable<IThreadSafeClient> Execute()
             => dataSource.Create(new Client(
                 idProvider.GetNextIdentifier(),
+                idProvider.GetNewUniqueId(),
                 workspaceId,
                 clientName,
                 timeService.CurrentDateTime,

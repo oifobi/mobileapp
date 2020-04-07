@@ -8,6 +8,8 @@ namespace Toggl.Storage.Realm.Models
 
         long? OriginalId { get; set; }
 
+        new string UniqueId { get; set; }
+
         void ChangeId(long id);
     }
 }

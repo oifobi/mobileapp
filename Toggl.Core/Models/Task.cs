@@ -11,6 +11,7 @@ namespace Toggl.Core.Models
             private const string errorMessage = "You need to set the {0} before building a task.";
 
             public long Id { get; }
+            public string UniqueId { get; }
             public long? WorkspaceId { get; private set; }
             public string Name { get; private set; }
             public SyncStatus? SyncStatus { get; private set; }
@@ -72,6 +73,7 @@ namespace Toggl.Core.Models
         private Task(Builder builder)
         {
             Id = builder.Id;
+            UniqueId = builder.UniqueId;
             Name = builder.Name;
             SyncStatus = builder.SyncStatus.Value;
         }

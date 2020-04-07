@@ -10,6 +10,8 @@ namespace Toggl.Core.Models
 
         public long Id { get; }
 
+        public string UniqueId { get; }
+
         public Country(string name, string countryCode, long id)
         {
             Id = id;

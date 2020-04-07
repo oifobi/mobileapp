@@ -10,7 +10,7 @@ namespace Toggl.Networking.Tests.Models
         public sealed class TheClientModel
         {
             private string validJson
-                => "{\"id\":23741667,\"wid\":1427273,\"name\":\"Test\",\"at\":\"2014-04-25T10:10:13+00:00\",\"server_deleted_at\":null}";
+                => "{\"id\":23741667,\"unique_id\":null,\"wid\":1427273,\"name\":\"Test\",\"at\":\"2014-04-25T10:10:13+00:00\",\"server_deleted_at\":null}";
 
             private Client validClient => new Client
             {

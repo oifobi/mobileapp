@@ -1,4 +1,5 @@
-﻿using Toggl.Core.Models.Interfaces;
+﻿using System;
+using Toggl.Core.Models.Interfaces;
 using Toggl.Shared;
 using Toggl.Shared.Models;
 using Toggl.Storage;
@@ -18,6 +19,9 @@ namespace Toggl.Core.Models
 
         public const long fakeId = 0;
         public long Id => fakeId;
+
+        public static readonly string fakeUniqueId = Guid.Empty.ToString();
+        public string UniqueId => fakeUniqueId;
 
         private Preferences(IPreferences entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
             : this(entity.TimeOfDayFormat, entity.DateFormat, entity.DurationFormat, entity.CollapseTimeEntries, syncStatus, lastSyncErrorMessage, isDeleted)

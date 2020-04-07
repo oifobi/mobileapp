@@ -9,6 +9,7 @@ namespace Toggl.Core.Models
     internal class Client : IThreadSafeClient
     {
         public long Id { get; }
+        public string UniqueId { get; }
         public long WorkspaceId { get; }
         public string Name { get; }
         public DateTimeOffset At { get; }
@@ -22,12 +23,13 @@ namespace Toggl.Core.Models
         public bool IsInaccessible => Workspace.IsInaccessible;
 
         private Client(IClient entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false, IThreadSafeWorkspace workspace = null)
-            : this(entity.Id, entity.WorkspaceId, entity.Name, entity.At, syncStatus, lastSyncErrorMessage, isDeleted, entity.ServerDeletedAt, workspace)
+            : this(entity.Id, entity.UniqueId, entity.WorkspaceId, entity.Name, entity.At, syncStatus, lastSyncErrorMessage, isDeleted, entity.ServerDeletedAt, workspace)
         { }
 
-        public Client(long id, long workspaceId, string name, DateTimeOffset at, SyncStatus syncStatus, string lastSyncErrorMessage = "", bool isDeleted = false, DateTimeOffset? serverDeletedAt = null, IThreadSafeWorkspace workspace = null)
+        public Client(long id, string uniqueId, long workspaceId, string name, DateTimeOffset at, SyncStatus syncStatus, string lastSyncErrorMessage = "", bool isDeleted = false, DateTimeOffset? serverDeletedAt = null, IThreadSafeWorkspace workspace = null)
         {
             Id = id;
+            UniqueId = uniqueId;
             WorkspaceId = workspaceId;
             Name = name;
             At = at;

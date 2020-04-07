@@ -8,6 +8,8 @@ namespace Toggl.Storage.Tests
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public SyncStatus SyncStatus { get; set; }
 
         public string LastSyncErrorMessage { get; set; }

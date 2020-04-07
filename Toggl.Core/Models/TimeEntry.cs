@@ -15,6 +15,8 @@ namespace Toggl.Core.Models
 
             public long Id { get; }
 
+            public string UniqueId { get; private set; }
+
             public SyncStatus SyncStatus { get; private set; }
 
             public bool Billable { get; private set; }
@@ -51,6 +53,12 @@ namespace Toggl.Core.Models
             {
                 ensureValidity();
                 return new TimeEntry(this);
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                UniqueId = uniqueId;
+                return this;
             }
 
             public Builder SetStart(DateTimeOffset start)
@@ -179,6 +187,7 @@ namespace Toggl.Core.Models
         private TimeEntry(Builder builder)
         {
             Id = builder.Id;
+            UniqueId = builder.UniqueId;
             Duration = builder.Duration;
             At = builder.At.Value;
             Start = builder.Start;

@@ -57,6 +57,8 @@ namespace Toggl.Core.Tests.Sync.States
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public DateTimeOffset At { get; set; }
 
         public DateTimeOffset? ServerDeletedAt { get; set; }

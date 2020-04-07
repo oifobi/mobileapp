@@ -24,6 +24,7 @@ namespace Toggl.Core.Models
         private Project(IProject entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             WorkspaceId = entity.WorkspaceId;
             ClientId = entity.ClientId;
             Name = entity.Name;
@@ -80,6 +81,7 @@ namespace Toggl.Core.Models
         private Tag(ITag entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             WorkspaceId = entity.WorkspaceId;
             Name = entity.Name;
             At = entity.At;
@@ -127,6 +129,7 @@ namespace Toggl.Core.Models
         private Task(ITask entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             Name = entity.Name;
             ProjectId = entity.ProjectId;
             WorkspaceId = entity.WorkspaceId;
@@ -180,6 +183,7 @@ namespace Toggl.Core.Models
         private TimeEntry(ITimeEntry entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             WorkspaceId = entity.WorkspaceId;
             ProjectId = entity.ProjectId;
             TaskId = entity.TaskId;
@@ -231,6 +235,7 @@ namespace Toggl.Core.Models
         private User(IUser entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             ApiToken = entity.ApiToken;
             DefaultWorkspaceId = entity.DefaultWorkspaceId;
             Email = entity.Email;
@@ -281,6 +286,7 @@ namespace Toggl.Core.Models
         private Workspace(IWorkspace entity, SyncStatus syncStatus, string lastSyncErrorMessage, bool isDeleted = false)
         {
             Id = entity.Id;
+            UniqueId = entity.UniqueId;
             Name = entity.Name;
             Admin = entity.Admin;
             SuspendedAt = entity.SuspendedAt;

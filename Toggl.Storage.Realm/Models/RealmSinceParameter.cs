@@ -9,6 +9,10 @@ namespace Toggl.Storage.Realm.Models
         [PrimaryKey]
         public long Id { get; set; }
 
+        private static readonly string fakeId = Guid.Empty.ToString();
+
+        public string UniqueId => fakeId;
+
         public DateTimeOffset? Since { get; set; }
 
         public RealmSinceParameter() { }

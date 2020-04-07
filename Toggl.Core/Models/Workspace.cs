@@ -13,6 +13,8 @@ namespace Toggl.Core.Models
 
             public long Id { get; }
 
+            public string UniqueId { get; private set; }
+
             public string Name { get; private set; }
 
             public SyncStatus SyncStatus { get; private set; }
@@ -32,6 +34,12 @@ namespace Toggl.Core.Models
             public Builder SetName(string name)
             {
                 Name = name;
+                return this;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                UniqueId = uniqueId;
                 return this;
             }
 
@@ -59,6 +67,7 @@ namespace Toggl.Core.Models
         private Workspace(Builder builder)
         {
             Id = builder.Id;
+            UniqueId = builder.UniqueId;
             Name = builder.Name;
             SyncStatus = builder.SyncStatus;
             At = builder.At;

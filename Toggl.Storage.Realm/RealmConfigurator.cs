@@ -1,5 +1,8 @@
 using Realms;
+using System;
 using System.Linq;
+using Toggl.Shared.Extensions;
+using Toggl.Storage.Realm.Migrations;
 
 namespace Toggl.Storage.Realm
 {
@@ -8,7 +11,7 @@ namespace Toggl.Storage.Realm
         public RealmConfiguration Configuration { get; }
             = new RealmConfiguration
             {
-                SchemaVersion = 8,
+                SchemaVersion = 9,
                 MigrationCallback = (migration, oldSchemaVersion) =>
                 {
                     if (oldSchemaVersion < 3)
@@ -43,6 +46,17 @@ namespace Toggl.Storage.Realm
                     {
                         // RealmUser: Added new property Timezone
                         // A migration is not required because it's acceptable for the timezone to be unspecified (null)
+                    }
+
+                    if (oldSchemaVersion < 9)
+                    {
+                        migration.GenerateUniqueId<RealmClient>();
+                        migration.GenerateUniqueId<RealmProject>();
+                        migration.GenerateUniqueId<RealmTag>();
+                        migration.GenerateUniqueId<RealmTask>();
+                        migration.GenerateUniqueId<RealmUser>();
+                        migration.GenerateUniqueId<RealmWorkspace>();
+                        migration.GenerateUniqueId<RealmTimeEntry>();
                     }
                 }
             };

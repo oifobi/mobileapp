@@ -10,6 +10,8 @@ namespace Toggl.Storage.Realm
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public long? OriginalId { get; set; }
 
         public bool IsDeleted { get; set; }
@@ -89,6 +91,8 @@ namespace Toggl.Storage.Realm
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public long? OriginalId { get; set; }
 
         public bool IsDeleted { get; set; }
@@ -146,6 +150,8 @@ namespace Toggl.Storage.Realm
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public long? OriginalId { get; set; }
 
         public bool IsDeleted { get; set; }
@@ -190,6 +196,8 @@ namespace Toggl.Storage.Realm
     internal partial class RealmTask : IUpdatesFrom<IDatabaseTask>, IModifiableId
     {
         public long Id { get; set; }
+
+        public string UniqueId { get; set; }
 
         public long? OriginalId { get; set; }
 
@@ -241,6 +249,8 @@ namespace Toggl.Storage.Realm
     internal partial class RealmTimeEntry : IUpdatesFrom<IDatabaseTimeEntry>, IModifiableId
     {
         public long Id { get; set; }
+
+        public string UniqueId { get; set; }
 
         public long? OriginalId { get; set; }
 
@@ -302,6 +312,8 @@ namespace Toggl.Storage.Realm
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public long? OriginalId { get; set; }
 
         public bool IsDeleted { get; set; }
@@ -350,6 +362,8 @@ namespace Toggl.Storage.Realm
     internal partial class RealmWorkspace : IUpdatesFrom<IDatabaseWorkspace>, IModifiableId
     {
         public long Id { get; set; }
+
+        public string UniqueId { get; set; }
 
         public long? OriginalId { get; set; }
 

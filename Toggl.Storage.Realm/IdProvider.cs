@@ -24,6 +24,9 @@ namespace Toggl.Storage.Realm
             this.getRealmInstance = getRealmInstance;
         }
 
+        public string GetNewUniqueId()
+            => Guid.NewGuid().ToString();
+
         public long GetNextIdentifier()
         {
             var nextIdentifier = -1L;

@@ -73,6 +73,7 @@ namespace Toggl.Core.Interactors
             => idProvider.GetNextIdentifier()
                 .Apply(TimeEntry.Builder.Create)
                 .SetUserId(user.Id)
+                .SetUniqueId(idProvider.GetNewUniqueId())
                 .SetTagIds(prototype.TagIds)
                 .SetTaskId(prototype.TaskId)
                 .SetStart(startTime)

@@ -43,6 +43,8 @@ namespace Toggl.Core.Tests.Mocks
 
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public SyncStatus SyncStatus { get; set; }
 
         public string LastSyncErrorMessage { get; set; }

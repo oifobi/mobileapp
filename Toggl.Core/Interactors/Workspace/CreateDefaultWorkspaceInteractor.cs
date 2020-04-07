@@ -57,6 +57,7 @@ namespace Toggl.Core.Interactors
         private IObservable<IThreadSafeWorkspace> createWorkspace(IThreadSafeUser user)
             => idProvider.GetNextIdentifier()
                 .Apply(Workspace.Builder.Create)
+                .SetUniqueId(idProvider.GetNewUniqueId())
                 .SetName(string.Format(Resources.WorkspacePossesive, user.Fullname))
                 .SetAt(timeService.CurrentDateTime)
                 .SetSyncStatus(SyncStatus.SyncNeeded)

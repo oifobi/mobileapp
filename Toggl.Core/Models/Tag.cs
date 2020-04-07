@@ -14,6 +14,8 @@ namespace Toggl.Core.Models
 
             public long Id { get; private set; }
 
+            public string UniqueId { get; private set; }
+
             public long? WorkspaceId { get; private set; }
 
             public string Name { get; private set; }
@@ -27,6 +29,12 @@ namespace Toggl.Core.Models
             private Builder(long id)
             {
                 Id = id;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                UniqueId = uniqueId;
+                return this;
             }
 
             public Builder SetWorkspaceId(long worksaceId)
@@ -90,6 +98,7 @@ namespace Toggl.Core.Models
         private Tag(Builder builder)
         {
             Id = builder.Id;
+            UniqueId = builder.UniqueId;
             Name = builder.Name;
             At = builder.At;
             ServerDeletedAt = builder.ServerDeletedAt;

@@ -7,6 +7,8 @@ namespace Toggl.Networking.Models
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public string Name { get; set; }
 
         public long ProjectId { get; set; }

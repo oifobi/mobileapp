@@ -15,6 +15,8 @@ namespace Toggl.Core.Interactors
         {
             public long Id { get; set; }
 
+            public string UniqueId { get; }
+
             public string Name { get; set; }
 
             [JsonProperty("country_code")]

@@ -8,10 +8,10 @@ namespace Toggl.Networking.Tests.Models
     public sealed class TagTests
     {
         private string validJson
-            => "{\"id\":2024667,\"workspace_id\":424213,\"name\":\"mobile\",\"at\":\"2014-04-25T10:10:13+00:00\",\"deleted_at\":\"2014-04-25T10:10:10+00:00\"}";
+            => "{\"id\":2024667,\"unique_id\":null,\"workspace_id\":424213,\"name\":\"mobile\",\"at\":\"2014-04-25T10:10:13+00:00\",\"deleted_at\":\"2014-04-25T10:10:10+00:00\"}";
 
         private string validJsonWithDefaultAtValue
-            => "{\"id\":2024667,\"workspace_id\":424213,\"name\":\"mobile\",\"at\":\"1970-01-01T00:00:00+00:00\",\"deleted_at\":\"2014-04-25T10:10:10+00:00\"}";
+            => "{\"id\":2024667,\"unique_id\":null,\"workspace_id\":424213,\"name\":\"mobile\",\"at\":\"1970-01-01T00:00:00+00:00\",\"deleted_at\":\"2014-04-25T10:10:10+00:00\"}";
 
         private Tag validTag => new Tag
         {

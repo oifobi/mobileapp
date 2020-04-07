@@ -11,6 +11,8 @@ namespace Toggl.Core.Tests.Mocks
 
         public long WorkspaceId { get; set; }
 
+        public string UniqueId { get; set; }
+
         public string Name { get; set; }
 
         public DateTimeOffset At { get; set; }

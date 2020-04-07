@@ -1,4 +1,5 @@
 ﻿using Realms;
+using System;
 using Toggl.Shared;
 using Toggl.Storage.Models;
 
@@ -10,6 +11,9 @@ namespace Toggl.Storage.Realm
 
         [Ignored]
         public long Id => fakeId;
+
+        [Ignored]
+        public string UniqueId => Guid.Empty.ToString();
 
         [Ignored]
         public TimeFormat TimeOfDayFormat

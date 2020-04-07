@@ -33,6 +33,8 @@ namespace Toggl.Core.Models
 
             public long Id { get; }
 
+            public string UniqueId { get; private set; }
+
             public string Name { get; private set; }
 
             public string Color { get; private set; }
@@ -69,6 +71,12 @@ namespace Toggl.Core.Models
             public Builder SetSyncStatus(SyncStatus syncStatus)
             {
                 SyncStatus = syncStatus;
+                return this;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                UniqueId = uniqueId;
                 return this;
             }
 
@@ -166,6 +174,7 @@ namespace Toggl.Core.Models
         private Project(Builder builder)
         {
             Id = builder.Id;
+            UniqueId = builder.UniqueId;
             Name = builder.Name;
             At = builder.At.Value;
             Color = builder.Color;

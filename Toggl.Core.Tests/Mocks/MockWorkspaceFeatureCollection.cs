@@ -9,6 +9,8 @@ namespace Toggl.Core.Tests.Mocks
     {
         public long Id => WorkspaceId;
 
+        public string UniqueId { get; set; }
+
         IDatabaseWorkspace IDatabaseWorkspaceFeatureCollection.Workspace => Workspace;
 
         IEnumerable<IDatabaseWorkspaceFeature> IDatabaseWorkspaceFeatureCollection.DatabaseFeatures => DatabaseFeatures;

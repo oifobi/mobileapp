@@ -10,6 +10,8 @@ namespace Toggl.Networking.Models
     {
         public long Id { get; set; }
 
+        public string UniqueId { get; set; }
+
         public string ApiToken { get; set; }
 
         public long? DefaultWorkspaceId { get; set; }

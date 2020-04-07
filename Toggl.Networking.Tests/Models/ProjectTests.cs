@@ -9,7 +9,7 @@ namespace Toggl.Networking.Tests.Models
     public sealed class ProjectTests
     {
         private string validJson
-            => "{\"id\":64261173,\"workspace_id\":376665,\"client_id\":null,\"name\":\"Test project\",\"is_private\":false,\"active\":true,\"at\":\"2016-05-20T17:28:00+00:00\",\"server_deleted_at\":null,\"color\":\"#f61d38\",\"billable\":false,\"template\":false,\"auto_estimates\":false,\"estimated_hours\":null,\"rate\":null,\"currency\":null,\"actual_hours\":277}";
+            => "{\"id\":64261173,\"unique_id\":null,\"workspace_id\":376665,\"client_id\":null,\"name\":\"Test project\",\"is_private\":false,\"active\":true,\"at\":\"2016-05-20T17:28:00+00:00\",\"server_deleted_at\":null,\"color\":\"#f61d38\",\"billable\":false,\"template\":false,\"auto_estimates\":false,\"estimated_hours\":null,\"rate\":null,\"currency\":null,\"actual_hours\":277}";
 
         private Project validProject => new Project
         {

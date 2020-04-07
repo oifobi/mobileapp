@@ -8,7 +8,7 @@ namespace Toggl.Networking.Tests.Models
     public sealed class TaskTests
     {
         private string validJson
-            => "{\"id\":79,\"name\":\"new task\",\"project_id\":1,\"workspace_id\":56,\"user_id\":null,\"estimated_seconds\":13,\"active\":true,\"at\":\"2017-01-01T02:03:00+00:00\",\"tracked_seconds\":12}";
+            => "{\"id\":79,\"unique_id\":null,\"name\":\"new task\",\"project_id\":1,\"workspace_id\":56,\"user_id\":null,\"estimated_seconds\":13,\"active\":true,\"at\":\"2017-01-01T02:03:00+00:00\",\"tracked_seconds\":12}";
 
         private Task validTask => new Task
         {

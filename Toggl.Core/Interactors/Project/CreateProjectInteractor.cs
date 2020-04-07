@@ -37,6 +37,7 @@ namespace Toggl.Core.Interactors
         public IObservable<IThreadSafeProject> Execute()
             => idProvider.GetNextIdentifier()
                 .Apply(Project.Builder.Create)
+                .SetUniqueId(idProvider.GetNewUniqueId())
                 .SetName(dto.Name)
                 .SetColor(dto.Color)
                 .SetClientId(dto.ClientId)
